@@ -29,7 +29,7 @@ router.get('/:id', async (req, res) => {
 		});
 		if (!dbPostData) {
 			return res.status(404).json({
-				message: `A user with an id of ${req.params.id} was not found!`
+				message: `A post with an id of ${req.params.id} was not found!`
 			});
 		}
 		res.json(dbPostData);
