@@ -8,3 +8,18 @@
 	color: whitesmoke;
 	opacity: 70%;
 }
+
+.card {
+	background-color: burlywood;
+}
+
+.card-title {
+	font-size: 35px;
+}
+.post-info {
+	font-size: small;
+}
+
+.post-created {
+	margin-right: 15px;
+}
