@@ -15,7 +15,7 @@ const seedAll = async () => {
 	console.log('\n----- POSTS SYNCED -----\n');
 
 	await seedComments();
-	console.log('\n----- DATABASE SYNCED -----\n');
+	console.log('\n----- COMMENTS SYNCED -----\n');
 
 	process.exit(0);
 };
