@@ -43,7 +43,7 @@ User.init(
 			},
 
 			async beforeBulkCreate(newUserData) {
-				for (user of newUserData) {
+				for (let user of newUserData) {
 					user.password = await bcrypt.hash(user.password, 10);
 				}
 				return newUserData;
