@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
 				},
 				{
 					model: Post,
-					attributes: ['id', 'title', 'user_id'],
+					attributes: ['id', 'title', 'post_text', 'user_id'],
 					include: [
 						{
 							model: User,
@@ -37,7 +37,7 @@ router.get('/:id', async (req, res) => {
 				},
 				{
 					model: Post,
-					attributes: ['id', 'title', 'user_id'],
+					attributes: ['id', 'title', 'post-text', 'user_id'],
 					include: [
 						{
 							model: User,

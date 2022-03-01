@@ -15,7 +15,9 @@ Post.init(
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		// TODO Add a text area for the post!
+		post_text: {
+			type: DataTypes.STRING
+		},
 		user_id: {
 			type: DataTypes.INTEGER,
 			references: {
