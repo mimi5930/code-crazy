@@ -9,6 +9,18 @@
 	opacity: 70%;
 }
 
+.nav-item a {
+	text-decoration: none;
+	color: whitesmoke;
+	font-size: large;
+	margin-right: 20px;
+}
+
+.nav-item:hover {
+	color: whitesmoke;
+	opacity: 70%;
+}
+
 .card {
 	background-color: burlywood;
 }
