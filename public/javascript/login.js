@@ -1,8 +1,8 @@
-const signupform = document.querySelector('.login-form');
+const loginform = document.querySelector('.login-form');
 
-const signupFormHandler = event => {
+const loginFormHandler = event => {
 	console.log('clicked!');
 	event.preventDefault();
 };
 
-signupform.addEventListener('submit', signupFormHandler);
+loginform.addEventListener('submit', loginFormHandler);
