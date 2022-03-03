@@ -1,7 +1,13 @@
-<section>
-	<div class='card'>
+<div class='container'>
+	<div class='card bg- mt-3'>
 		<div class='card-body'>
-			<h2 class='card-title'>{{title}}</h2>
+			<h2 class='card-title'><a href='/api/posts/{{id}}'>{{title}}</a></h2>
+			<p class='card-text'>{{post_text}}</p>
+			<div class='card-text d-flex flex-row justify-content-end post-info'>
+				<p class='card-text post-created'>created on {{created_at}}</p>
+				<p class='card-text'><a href='/'>{{comments.length}}
+						comment(s)</a></p>
+			</div>
 		</div>
 	</div>
-</section>
+</div>
