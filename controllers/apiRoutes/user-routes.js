@@ -42,9 +42,57 @@ router.post('/', async (req, res) => {
 			email: req.body.email,
 			password: req.body.password
 		});
-		res.json(dbUserData);
+		req.session.save(() => {
+			req.session.id = dbUserData.id;
+			req.session.username = dbUserData.username;
+			req.session.loggedIn = true;
+
+			res.json(dbUserData);
+		});
 	} catch (err) {
 		res.status(500).json(err);
+	}
+});
+
+router.post('/login', async (req, res) => {
+	try {
+		const dbUserData = await User.findOne({
+			where: {
+				email: req.body.email
+			}
+		});
+		if (!dbUserData) {
+			res.status(400).json({ message: 'No user was found with that email!' });
+		}
+
+		const validate = dbUserData.checkPassword(req.body.password);
+
+		if (!validate) {
+			res
+				.status(400)
+				.json({ message: 'Password is incorrect, please try again!' });
+			return;
+		}
+
+		req.session.save(() => {
+			req.session.id = dbUserData.id;
+			req.session.username = dbUserData.username;
+			req.session.loggedIn = true;
+		});
+
+		res.json({ user: dbUserData, message: 'You have successfully logged in!' });
+	} catch (err) {
+		res.status(500).json(err);
+	}
+});
+
+router.post('/logout', (req, res) => {
+	if (req.session.loggedIn) {
+		req.session.destroy(() => {
+			res.status(204).end();
+		});
+	} else {
+		res.status(404).end();
 	}
 });
 
