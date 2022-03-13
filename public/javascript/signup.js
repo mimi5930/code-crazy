@@ -19,9 +19,10 @@ const signupFormHandler = async event => {
 				'Content-Type': 'application/json'
 			}
 		});
-		console.log(res);
 
-		if (!res.ok) {
+		if (res.ok) {
+			document.location.replace('/dashboard');
+		} else {
 			alert(res.statusText);
 		}
 	}
