@@ -50,36 +50,4 @@ router.get('/login', (req, res) => {
 	res.render('login');
 });
 
-router.get('/dashboard', async (req, res) => {
-	const userPostData = await Post.findAll({
-		where: {
-			user_id: req.session.user_id
-		},
-		attributes: ['id', 'title', 'post_text', 'created_at'],
-		include: [
-			{
-				model: Comment,
-				attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-				include: {
-					model: User,
-					attributes: ['username']
-				}
-			},
-			{
-				model: User,
-				attributes: ['username']
-			}
-		]
-	});
-
-	const posts = userPostData.map(post => {
-		post.get({ plain: true });
-	});
-
-	res.render('dashboard', {
-		posts,
-		loggedIn: req.session.loggedIn
-	});
-});
-
 module.exports = router;
