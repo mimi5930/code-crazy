@@ -1,12 +1,17 @@
-<h1>My Blog Posts</h1>
+<div class='container d-flex justify-content-center'>
+	<h1>My Blog Posts</h1>
+</div>
+
 {{#if posts.length}}
-	<h2>Select a post to edit</h2>
+	<div class='container'>
+		<h3>Select a post to edit</h3>
+	</div>
 {{/if}}
 {{#each posts as |post|}}
 	<div class='container'>
 		<div class='card mt-3'>
 			<div class='card-body'>
-				<h2 class='card-title'><a
+				<h2 class='card-title post-title'><a
 						href='/dashboard/edit/{{post.id}}'
 					>{{post.title}}</a></h2>
 				<p class='card-text'>{{post.post_text}}</p>
@@ -21,5 +26,6 @@
 		</div>
 	</div>
 {{/each}}
-
-<a class='btn btn-success' href='/dashboard/new-post'>Add a new post</a>
+<div class='container mt-5'>
+	<a class='btn btn-success' href='/dashboard/new-post'>Add a new post</a>
+</div>

@@ -1,3 +1,5 @@
+/* main */
+
 .logo {
 	text-decoration: none;
 	padding-left: 20px;
@@ -20,22 +22,46 @@
 	margin-right: 20px;
 }
 
+#log-out {
+	background: none;
+	color: whitesmoke;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	font-size: large;
+	margin-right: 20px;
+}
+
 .nav-item:hover {
 	color: whitesmoke;
 	opacity: 70%;
 }
 
+/* post-info */
+
 .card {
 	background-color: burlywood;
 }
 
-.card-title {
+.post-title {
+	font-weight: bold;
 	font-size: 35px;
 }
+
+.post-title a {
+	color: black;
+}
+
 .post-info {
 	font-size: small;
 }
 
 .post-created {
 	margin-right: 15px;
+}
+
+/* comment-info */
+
+.comment-card {
+	background-color: rgb(255, 255, 255);
 }

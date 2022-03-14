@@ -1,32 +1,40 @@
-<h1>Update Post</h1>
+<div class='container'>
+	<h1>Update Post</h1>
+</div>
 <div class='container'>
 	<div class='card mt-3'>
 		<div class='card-body'>
-			<h2 class='card-title'><a
-					href='/posts/{{posts.id}}'
-				>{{post.title}}</a></h2>
+			<h2 class='card-title post-title'>{{post.title}}</h2>
 			<p class='card-text'>{{post.post_text}}</p>
 			<div class='card-text d-flex flex-row justify-content-end post-info'>
 				<p class='card-text post-created'>created on {{post.created_at}}</p>
-				<p class='card-text'><a href='/posts/{{id}}'>{{post.comments.length}}
+				<p class='card-text'><a
+						href='/posts/{{post.id}}'
+					>{{post.comments.length}}
 						comment(s)</a></p>
 			</div>
 		</div>
 	</div>
 </div>
 
-<form id='update-form'>
-	<div>
-		<label for='update-title'>Title</label>
-		<input type='text' value='{{post.title}}' id='update-title' />
+<form class='container mt-5' id='update-form'>
+	<div class='mb-3'>
+		<label class='form-label' for='update-title'>Title</label>
+		<input
+			class='form-control'
+			type='text'
+			value='{{post.title}}'
+			id='update-title'
+		/>
 	</div>
-	<div>
-		<label for='update-text'>Text</label>
-		<textarea id='update-text'></textarea>
+	<div class='mb-3'>
+		<label class='form-label' for='update-text'>Text</label>
+		<textarea class='form-control' id='update-text'></textarea>
 	</div>
-	<button type='submit'>Submit</button>
+	<button class='btn btn-primary' type='submit'>Update Post</button>
 </form>
-
-<button id='delete-post' class='btn btn-danger'>Delete Post</button>
+<div class='container mt-3'>
+	<button id='delete-post' class='btn btn-danger'>Delete Post</button>
+</div>
 
 <script src='/javascript/updatePost.js'></script>

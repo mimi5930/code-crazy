@@ -1,23 +1,25 @@
-<div class='container'>
+<div class='container mb-5'>
     <div class='card mt-3'>
         <div class='card-body'>
-            <h2 class='card-title'>{{posts.title}}</h2>
+            <h2 class='card-title post-title'>{{posts.title}}</h2>
             <p class='card-text'>{{posts.post_text}}</p>
             <div class='card-text d-flex flex-row justify-content-end post-info'>
-                <p class='card-text post-created'>created on {{posts.createdAt}}</p>
+                <p class='card-text post-created'>created on {{posts.created_at}}</p>
             </div>
         </div>
     </div>
 </div>
+<div class="container">
 {{#each posts.comments as |comment|}}
-{{> comment-info }}
+    {{> comment-info }}
 {{/each}}
+</div>
 
 
-<form class="comment-form">
-    <label for="comment-text">Comment</label>
-    <textarea id="comment-text"></textarea>
-<button type="submit">Submit</button>
+<form class="comment-form container mt-5">
+    <label class="form-label" for="comment-text">Comment</label>
+    <textarea class="form-control mb-3" id="comment-text"></textarea>
+<button class="btn btn-primary" type="submit">Add comment</button>
 </form>
 
 {{!-- Script for handling comments --}}
