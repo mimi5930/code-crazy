@@ -1,0 +1,32 @@
+<h1>Update Post</h1>
+<div class='container'>
+	<div class='card mt-3'>
+		<div class='card-body'>
+			<h2 class='card-title'><a
+					href='/posts/{{posts.id}}'
+				>{{post.title}}</a></h2>
+			<p class='card-text'>{{post.post_text}}</p>
+			<div class='card-text d-flex flex-row justify-content-end post-info'>
+				<p class='card-text post-created'>created on {{post.created_at}}</p>
+				<p class='card-text'><a href='/posts/{{id}}'>{{post.comments.length}}
+						comment(s)</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<form id='update-form'>
+	<div>
+		<label for='update-title'>Title</label>
+		<input type='text' value='{{post.title}}' id='update-title' />
+	</div>
+	<div>
+		<label for='update-text'>Text</label>
+		<textarea id='update-text'></textarea>
+	</div>
+	<button type='submit'>Submit</button>
+</form>
+
+<button id='delete-post' class='btn btn-danger'>Delete Post</button>
+
+<script src='/javascript/updatePost.js'></script>
