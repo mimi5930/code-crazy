@@ -22,9 +22,9 @@ router.get('/:id', async (req, res) => {
 
 		let posts = postData.get({ plain: true });
 
-		console.log(posts);
 		res.render('post', {
-			posts
+			posts,
+			loggedIn: req.session.loggedIn
 		});
 	} catch (err) {
 		res.status(500).json(err);
