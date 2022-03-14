@@ -4,6 +4,7 @@ const { Post, User, Comment } = require('../models');
 router.get('/:id', async (req, res) => {
 	try {
 		const postData = await Post.findByPk(req.params.id, {
+			attributes: ['id', 'title', 'post_text', 'created_at'],
 			include: [
 				{
 					model: User,
