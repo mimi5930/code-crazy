@@ -1,0 +1,21 @@
+<div class='container'>
+    <div class='card mt-3'>
+        <div class='card-body'>
+            <h2 class='card-title'>{{posts.title}}</h2>
+            <p class='card-text'>{{posts.post_text}}</p>
+            <div class='card-text d-flex flex-row justify-content-end post-info'>
+                <p class='card-text post-created'>created on {{posts.created_at}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{{#each posts.comments as |comment|}}
+{{> comment-info }}
+{{/each}}
+
+
+<div class="comment-field">
+    <label for="comment-text">Comment</label>
+    <textarea id="comment-text"></textarea>
+</div>
+<button id="comment-submit">Submit</button>
