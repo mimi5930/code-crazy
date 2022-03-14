@@ -1,6 +1,25 @@
 <h1>My Blog Posts</h1>
+{{#if posts.length}}
+	<h2>Select a post to edit</h2>
+{{/if}}
 {{#each posts as |post|}}
-    {{> post-info post}}
+	<div class='container'>
+		<div class='card mt-3'>
+			<div class='card-body'>
+				<h2 class='card-title'><a
+						href='/dashboard/edit/{{post.id}}'
+					>{{post.title}}</a></h2>
+				<p class='card-text'>{{post.post_text}}</p>
+				<div class='card-text d-flex flex-row justify-content-end post-info'>
+					<p class='card-text post-created'>created on {{post.created_at}}</p>
+					<p class='card-text'><a
+							href='/dashboard/edit/{{id}}'
+						>{{post.comments.length}}
+							comment(s)</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
 {{/each}}
 
-<a class="btn btn-success" href="/dashboard/new-post">Add a new post</a>
+<a class='btn btn-success' href='/dashboard/new-post'>Add a new post</a>
