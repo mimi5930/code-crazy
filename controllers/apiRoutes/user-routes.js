@@ -78,9 +78,12 @@ router.post('/login', async (req, res) => {
 			req.session.user_id = dbUserData.id;
 			req.session.username = dbUserData.username;
 			req.session.loggedIn = true;
-		});
 
-		res.json({ user: dbUserData, message: 'You have successfully logged in!' });
+			res.json({
+				user: dbUserData,
+				message: 'You have successfully logged in!'
+			});
+		});
 	} catch (err) {
 		res.status(500).json(err);
 	}
