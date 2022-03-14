@@ -19,7 +19,7 @@ const loginFormHandler = async event => {
 		});
 
 		if (res.ok) {
-			console.log(res);
+			document.location.replace('/dashboard');
 		} else {
 			alert(res.statusText);
 		}
