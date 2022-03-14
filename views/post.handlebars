@@ -14,8 +14,11 @@
 {{/each}}
 
 
-<div class="comment-field">
+<form class="comment-form">
     <label for="comment-text">Comment</label>
     <textarea id="comment-text"></textarea>
-</div>
-<button id="comment-submit">Submit</button>
+<button type="submit">Submit</button>
+</form>
+
+{{!-- Script for handling comments --}}
+<script src='/javascript/comment.js'></script>
