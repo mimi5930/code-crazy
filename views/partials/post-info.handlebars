@@ -6,7 +6,10 @@
 				>{{title}}</a></h2>
 			<p class='card-text'>{{post_text}}</p>
 			<div class='card-text d-flex flex-row justify-content-end post-info'>
-				<p class='card-text post-created'>created on {{created_at}}</p>
+				<p class='card-text post-created'>created by
+					<span style='font-weight: bold;'>{{user.username}}</span>
+					on
+					{{created_at}}</p>
 				<p class='card-text'><a href='/posts/{{id}}'>{{comments.length}}
 						comment(s)</a></p>
 			</div>
