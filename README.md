@@ -2,7 +2,7 @@
 
 ## Website
 
-https://fathomless-dusk-37377.herokuapp.com/
+https://code-crazy.herokuapp.com/
 
 ## Description
 
